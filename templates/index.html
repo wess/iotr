@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Ipsum of the Ring</title>
+		<link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
+		<style type="text/css" media="screen">
+			body, * {
+				font-family: 'Della Respira', serif;
+			}
+			#container {
+				width:800px;
+				margin:0 auto;
+			}
+			
+			#header {
+			}
+			
+			#header h1 {
+				height:80px;
+				background:url(/static/images/iotr.png) no-repeat center center;
+				margin-bottom:0;
+				padding:0;
+			}
+			#content h3 {
+				margin-top:0;
+			}
+			
+			#p-input {
+				margin:0 auto;
+				width:500px;
+				font-size:22px;
+			}
+			#p-input input {
+				width:60px;
+				float:right;
+				font-size:20px;
+				margin-left:20px;
+				margin-right:20px;
+			}
+			#p-submit {
+				width:100px;
+				float:right;
+				font-size:20px;
+				border-radius:5px;
+				border:1px solid black;
+				text-shadow:0 1px 1px white;
+				background:#ccc;
+			}
+			
+			#generated {
+				margin-top:40px;
+				padding:10px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1></h1>
+			</div><!-- header -->
+
+			<div id="content"> 
+				<h3>Join the hobbit Lorem on an epic quest to save Middle Earth from evil lord Ipsum</h3>
+				<form action="" method="post" accept-charset="utf-8">
+					<p id="p-input">
+						<button id="p-submit" type="submit">Generate</button>
+						<input type="text" name="paragraph_count" id="paragraph_count">
+						Enter number of paragraphs
+					</p>
+				</form>
+			</div><!-- content -->
+			
+			<div id="generated">
+				{{generated|safe}}
+			</div><!-- generated -->
+		</div><!-- container -->
+	</body>
+</html>
