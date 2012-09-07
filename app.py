@@ -19,24 +19,19 @@ def index():
          paragraph_count = int(request.form['paragraph_count'])
 
          with open('lotr.txt', 'r') as f:
-            text = f.read()
-            textList = text.split("####-")
-            textlen = len(textList)
-            textlenCap = textlen - paragraph_count
-            starting = randrange(1, textlenCap)
-            ending = starting + paragraph_count
-            paragraphs = "</p><p>".join(textList[starting:ending])
-            generated = u"<p>%s</p>" % paragraphs.decode('utf-8')
-            
-            print
-            print type(textList)
-            print len(textList)
-            print starting
-            print ending
-            print
+            text        = f.read()
+            textList    = text.split("####-")
+            textlen     = len(textList)
+            textlenCap  = textlen - paragraph_count
+            starting    = randrange(1, textlenCap)
+            ending      = starting + paragraph_count
+            paragraphs  = "</p><p>".join(textList[starting:ending])
+            generated   = u"<p>%s</p>" % paragraphs.decode('utf-8')
             
    
    return render_template("index.html", generated=generated)
    
    
-app.run(debug=True)
+if __name__ == '__main__':
+   port = int(os.environ.get('PORT', 5000))
+   app.run(host="0.0.0.0", port=port)
